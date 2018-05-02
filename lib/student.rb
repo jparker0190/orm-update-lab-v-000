@@ -54,6 +54,7 @@ def self.new_from_db(row)
   stud.id = row[0]
   stud.name = row[1]
   stud.grade = row[2]
+  stud
 end
 
   def self.find_by_name(name)
