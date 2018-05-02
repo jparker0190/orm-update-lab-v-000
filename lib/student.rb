@@ -50,7 +50,7 @@ def self.create(name, grade)
 end
 
 def self.new_from_db(row)
-  stud = Student.new
+  stud = self.new
   stud.id = row[0]
   stud.name = row[1]
   stud.grade = row[2]
