@@ -48,13 +48,14 @@ def self.create(name, grade)
   stud.save
   stud
 end
-
+def self.fake(row)
+end
 def self.new_from_db(row)
-  new_song = self.new 
+  new_song = self.new
   new_song.id = row[0]
   new_song.name =  row[1]
   new_song.length = row[2]
-  new_song 
+  new_song
   sql = "SELECT * from students"
   DB[:conn].execute(sql)
 end
