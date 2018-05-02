@@ -51,7 +51,7 @@ end
 
 def self.new_from_db
   sql = "SELECT * from students"
-  DB[:conn].execute
+  DB[:conn].execute(sql)
 end
 
   def self.find_by_name(name)
