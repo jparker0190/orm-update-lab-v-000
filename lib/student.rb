@@ -50,11 +50,10 @@ def self.create(name:, grade:)
 end
 
   def self.new_from_db(row)
-    new_stu = self.new
-    new_stu.id = row[0]
-    new_stu.name = row[1]
-    new_stu.grade = row[2]
-    new_stu
+    new_t = self.new
+    new_t.id = row[0]
+    new_t.name = row[1]
+    new_t.grade = row[2]
   end
 
   def self.find_by_name(name)
