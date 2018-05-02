@@ -48,6 +48,7 @@ def self.create(name, grade)
   stud.save
   stud
 end
+
 def self.all(row)
   new_t = self.new
   new_t.id = row[0]
@@ -55,9 +56,18 @@ def self.all(row)
   new_t.grade = row[2]
   new_t
 end
-  def self.new_from_db(row)
 
+def self.new_from_db(row)
+    sql = <<-SQL
+      SELECT *
+      FROM songs
+    SQL
+ 
+    DB[:conn].execute(sql).map do |row|
+      self.all(row)
+    end
   end
+end
 
   def self.find_by_name(name)
     sql = "SELECT * FROM students WHERE name = ?"
