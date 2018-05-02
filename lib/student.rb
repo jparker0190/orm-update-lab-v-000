@@ -54,6 +54,7 @@ end
     new_t.id = row[0]
     new_t.name = row[1]
     new_t.grade = row[2]
+    new_t
   end
 
   def self.find_by_name(name)
