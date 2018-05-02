@@ -59,10 +59,9 @@ end
 
 def self.new_from_db(row)
     sql = <<-SQL
-      SELECT *
-      FROM songs
+      SELECT * FROM students
     SQL
- 
+
     DB[:conn].execute(sql).map do |row|
       self.all(row)
     end
