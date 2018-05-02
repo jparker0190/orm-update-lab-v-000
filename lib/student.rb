@@ -49,22 +49,10 @@ def self.create(name, grade)
   stud
 end
 
-def self.all(row)
-  new_t = self.new
-  new_t.id = row[0]
-  new_t.name = row[1]
-  new_t.grade = row[2]
-  new_t
-end
-
-def self.new_from_db
-    sql = <<-SQL
-      SELECT * FROM students
-    SQL
-
-    DB[:conn].execute(sql).map do |row|
-      self.all(row)
-  end
+def self.new_from_db(row)
+  stud = Student.new
+  stud.id = row[0]
+  stud.name = row[1]
 end
 
   def self.find_by_name(name)
