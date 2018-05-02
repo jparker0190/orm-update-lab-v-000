@@ -49,7 +49,7 @@ def self.create(name, grade)
   stud
 end
 
-def self.new_from_db
+def self.new_from_db(array)
   sql = "SELECT * from students"
   DB[:conn].execute(sql)
 end
