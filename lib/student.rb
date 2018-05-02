@@ -48,13 +48,14 @@ def self.create(name, grade)
   stud.save
   stud
 end
-
+def self.all(row)
+  new_t = self.new
+  new_t.id = row[0]
+  new_t.name = row[1]
+  new_t.grade = row[2]
+  new_t
+end
   def self.new_from_db(row)
-    new_t = self.new
-    new_t.id = row[0]
-    new_t.name = row[1]
-    new_t.grade = row[2]
-    new_t
 
   end
 
